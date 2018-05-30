@@ -2,7 +2,7 @@
 pipeline {
 	agent any 
 	stages {
-		stage('Build') {
+		stage('Build_m') {
 			when{
 				branch 'master'
 			}
@@ -10,7 +10,7 @@ pipeline {
 				echo "Building on master"
 			}
 		}
-		stage('Build') {
+		stage('Build_d') {
 			when{
 				branch 'dev'
 			}
@@ -18,7 +18,7 @@ pipeline {
 				echo "Building on dev"
 			}
 		}
-		stage('Test') {
+		stage('Test_m') {
 			when{
 				branch 'master'
 			}
@@ -26,7 +26,7 @@ pipeline {
 				echo "Testing on master"
 			}
 		}
-		stage('Test') {
+		stage('Test_d') {
 			when{
 				branch 'dev'
 			}
@@ -34,7 +34,7 @@ pipeline {
 				echo "Testting on dev"
 			}
 		}
-		stage('Deploy') {
+		stage('Deploy_m') {
 			when{
 				branch 'master'
 			}
@@ -42,7 +42,7 @@ pipeline {
 				echo "Deploying on master"
 			}
 		}
-		stage('Deploy') {
+		stage('Deploy_d') {
 			when{
 				branch 'dev'
 			}
